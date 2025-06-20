@@ -66,12 +66,13 @@ export default function Header() {
         {/* Navegacion movil */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" className="sm:hidden ml-4">
+            <Button variant="ghost" className="md:hidden">
               <Menu className="h-5 w-5" />
+              <span className="sr-only">Abrir Menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="w-64">
-            <nav className="flex flex-col gap-4 mt-4">
+          <SheetContent side="right" className="w-[300px]">
+            <nav className="flex flex-col gap-4 p-4">
               {navItems.map((item) => (
                 <Link key={item.label} href={item.href} className={cn("flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-foreground/80", pathname === item.href ?"text-foreground" : "text-foreground/60")}>
                   <item.icon className="h-4 w-4"/>
